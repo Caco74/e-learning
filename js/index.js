@@ -1,21 +1,3 @@
-//
-// function cambiarFondo(background) {
-//   document.getElementsByTagName('body')[0].style.backgroundColor= "#4d62d0"  ;
-//   var hijo = document.getElementsByTagName("body")[0].children[0];
-// }
-//
-// function cambiarFondo(background) {
-//   document.getElementsByTagName('body')[0].style.backgroundColor= "#149c5f"  ;
-//   if (body.children[0]) {
-//     document.getElementsByTagName('body.children[0]')[0].style.backgroundColor= "inherit";
-//   }
-// }
-//
-// function tamañoPanel() {
-//   document.querySelector("div[class='item']").style.width= "4%";
-//   document.querySelector("div[class='it em']").style.backgroundColor= "#4d62d0";
-//
-// }
 function colorUno(titulo) {
   titulo = document.getElementsByTagName('h1')[0];
   titulo.style.backgroundColor = "#4d62d0";
@@ -23,53 +5,59 @@ function colorUno(titulo) {
     titulo.children[0].style.background = "inherit";
   }
 }
-colorUno();
-
+// colorUno();
 
 function colorDos(boton) {
-  boton =document.getElementsByClassName("container-botones")[0];
-  boton.style.backgroundColor = "red";
+  boton =document.getElementsByClassName("boton-accion")[0];
+  boton.style.backgroundColor = "#149c5f";
   if (typeof boton.children[0] !== 'undefined') {
     boton.children[0].style.backgroundColor = "inherit";
   }
 }
-colorDos();
+// colorDos();
 
-function tamañoPaneles(menu) {
-  for (var i = 0; i < document.querySelectorAll("[class^='item-']").length; i++) {
-    document.querySelectorAll("[class^='item-']")[i].style.width = "4%";
-    document.querySelectorAll("[class^='item-']")[i].style.backgroundColor = "#4d62d0";
+function tamañoPaneles() {
+  var contenido = document.querySelectorAll("[class^='item-']");
+  for (var i = 0; i < contenido.length; i++) {
+    contenido[i].style.width = "4%";
+    contenido[i].style.backgroundColor = "#4d62d0";
   }
-  for (var i = 0; i < document.querySelectorAll("[class^='item-']").length; i++) {
-    document.querySelectorAll("[class^='item-']")[i].style.display = "none";
+  for (var i = 1; i < contenido.length; i++) {
+    contenido[i].style.display = "none";
   }
   menu = document.getElementsByClassName('main-row')[0];
   menu.style.width = "96%";
-  menu.style.backgroundColor = "white";
+  menu.style.backgroundColor = "#fff";
   for (var i = 0; i < menu.children.length; i++) {
     menu.children[i].style.display = "block";
   }
 }
+// tamañoPaneles();
 
-function reducirTamaño(reducir) {
-  reducir = document.getElementsByClassName('boton-accion')[2];
+function reducirTamaño() {
+  var reducir = document.getElementsByClassName('bottom-row')[0];
   reducir.style.width = "18%";
 }
-reducirTamaño();
+// reducirTamaño();
 
-function aumentarTamaño(aumentar) {
-  aumentar = document.getElementsByClassName('boton-accion')[1];
+function aumentarTamaño() {
+  var aumentar = document.getElementsByClassName('bottom-row')[0];
   aumentar.style.width = "20%";
 }
-aumentarTamaño();
+// aumentarTamaño();
+
 function reducirTamañoLetra(){
-  document.querySelectorAll("[class^='item-'] h1")[0].style.fontSize = "small";
-  document.querySelectorAll("[class^='item-'] h1")[1].style.fontSize = "small";
-  document.querySelectorAll("[class^='item-'] h1")[2].style.fontSize = "small";
+  var reducir = document.querySelectorAll("[class^='item-'] h1");
+  for (var i = 0; i < reducir.length; i++) {
+    reducir[i].style.fontSize = "small";
+  }
 }
+// reducirTamañoLetra();
 
 function aumentarTamañoLetra(){
-  document.querySelectorAll("[class^='item-'] h1")[0].style.fontSize = "xx-large";
-  document.querySelectorAll("[class^='item-'] h1")[1].style.fontSize = "xx-large";
-  document.querySelectorAll("[class^='item-'] h1")[2].style.fontSize = "xx-large";
+  var aumentar = document.querySelectorAll("[class^='item-'] h1");
+  for (var i = 0; i < aumentar.length; i++) {
+    aumentar[i].style.fontSize = "xx-large";
+  }
 }
+// aumentarTamañoLetra();
